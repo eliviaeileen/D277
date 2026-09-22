@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Oklahoma</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="OKC.html">Capital City</a>
+            <a href="Tulsa.html">Other City 1</a>
+            <a href="Sulphur.html">Other City 2</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+    
+        <section id="contact-page">
+            <div class="contact-container">
+                <!-- Left Column: Contact Form -->
+                <div class="contact-left">
+                    <h2>Contact Us</h2>
+                    <p>Reach out with any questions!</p>
+                    <form id="contact-form">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname">
+
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+
+                        <label for="confirmemail">Confirm Email</label>
+                        <input type="email" id="confirmemail" name="confirmemail">
+
+                        <label for="message">Question</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your question here..."></textarea>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                    <p id="success-message" style="display:none; color:green; margin-top:15px;">
+                        Thanks for contacting us! We will be in touch soon.
+                    </p>
+                </div>
+
+                <!-- Right Column -->
+                <section id="Oklahoma_map">
+                    <div class="about-slideshow">
+                        <div class="slideshow-container">
+                            <div class="slide fade">
+                                <img src="contactimages.jpg" alt="Oklahoma">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <aside>
+                    <p>
+                        Oklahoma most notable professional team is the Oklahoma City Thunder.</p>
+                </aside>
+
+                <script>
+                    document.getElementById("contact-form").addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        const firstname = document.getElementById("firstname").value;
+                        const lastname = document.getElementById("lastname").value;
+                        const email = document.getElementById("email").value;
+                        const confirmemail = document.getElementById("confirmemail").value;
+
+                        if (!firstname) {
+                            alert("Please enter your first name.");
+                            return;
+                        }
+
+                        if (!lastname) {
+                            alert("Please enter your last name.");
+                            return;
+                        }
+
+                        if (email !== confirmemail) {
+                            alert("The email addresses do not match. Please try again.");
+                            return;
+                        }
+
+                        document.getElementById("success-message").style.display = "block";
+                    });
+                </script>
+               
+
+</body>
+</html>
